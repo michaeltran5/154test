@@ -1,0 +1,23 @@
+h1 {
+    text-align: center;
+}
+body {
+    background-color: #f7f4e9;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    justify-content: space-between; /* Distribute items with space between them */
+  }
+  
+  nav li {
+    margin: 0 5px; /* Reduce margin to 5px on each side */
+  }
+  
+  nav li a {
+    text-decoration: none;
+    color: #333; 
+    padding: 15px;
+  }
