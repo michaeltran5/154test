@@ -1,80 +1,97 @@
 * {
-    font-family:'Courier New', Courier, monospace;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 h1 {
-    text-align: center;
+  text-align: center;
 }
-body {
-    background-color: #f7f4e9;
-}
-nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 50px;
-    background-color: #f7f4e9; /* Updated background color */
-    color: #333; /* Adjust text color for contrast */
-  }
-  
-  nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex; /* Enable flexbox for the list */
-    flex-direction: row; /* Arrange items horizontally */
-  }
-  
-  nav li {
-    margin: 0 10px;
-  }
-  
-  nav a {
-    text-decoration: none;
-    color: #000;
-    font-size: 16px;
-    padding: 10px;
-    border-bottom: 2px solid transparent; /* Initially transparent border */
-    transition: border-color 0.3s; /* Smooth transition for border color */
-}
-nav a:hover {
-    border-color: #333; /* Change border color to dark gray on hover */
-}
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    grid-gap: 10px; 
-    margin: 0 auto; /* Center the grid horizontally */
-    max-width: 900px; /* Optional: Set a maximum width for the grid */
-  }
-  
-  .grid-item {
-    position: relative; /* For absolute positioning of the image */
-    width: 100%;
-    padding-top: 150%; /* Adjust this value to control the aspect ratio (height/width * 100%) */
-    overflow: hidden;
-    display: flex;
-  }
-  .grid-item img {
-    width: 100%;
-    height: auto; /* Maintains aspect ratio */
-    display: block; /* Prevents small gaps below images */    
-    transition: opacity 0.3s ease;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* or object-fit: contain; */
 
-  }
-  .grid-item:hover img {
-    opacity: 0.3; /* Reduce opacity on hover to make the image darker */
-  }
-  .vertical-text {
-    position: absolute;
-    top: 50%; /* Center vertically */
-    left: -20px; /* Adjust left position as needed */
-    transform: translateY(-50%) rotate(-90deg); /* Rotate and center */
-    white-space: nowrap; /* Prevent text from wrapping */
-  }
+body {
+  background-color: #f7f4e9;
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 100px;
+  height: 100px;
+  z-index: 1000; /* Ensures the logo stays on top of other elements */
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+  background-color: #f7f4e9; /* Updated background color */
+  color: #333; /* Adjust text color for contrast */
+  padding-top: 120px; /* Adjust this value based on your logo size */
+  padding-left: 120px; /* Add left padding to prevent overlap with logo */
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Enable flexbox for the list */
+  flex-direction: row; /* Arrange items horizontally */
+}
+
+nav li {
+  margin: 0 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  padding: 10px;
+  border-bottom: 2px solid transparent; /* Initially transparent border */
+  transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+nav a:hover {
+  border-color: #333; /* Change border color to dark gray on hover */
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-gap: 10px; 
+  margin: 0 auto; /* Center the grid horizontally */
+  max-width: 900px; /* Optional: Set a maximum width for the grid */
+}
+
+.grid-item {
+  position: relative; /* For absolute positioning of the image */
+  width: 100%;
+  padding-top: 150%; /* Adjust this value to control the aspect ratio (height/width * 100%) */
+  overflow: hidden;
+  display: flex;
+}
+
+.grid-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* or object-fit: contain; */
+  display: block; /* Prevents small gaps below images */    
+  transition: opacity 0.3s ease;
+}
+
+.grid-item:hover img {
+  opacity: 0.3; /* Reduce opacity on hover to make the image darker */
+}
+
+.vertical-text {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: -20px; /* Adjust left position as needed */
+  transform: translateY(-50%) rotate(-90deg); /* Rotate and center */
+  white-space: nowrap; 
+}/* Prevent text from wrapping */
