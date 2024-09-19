@@ -1,0 +1,4 @@
+Add nav bar to bottom of the gallery and flash page
+figure out how to automatically populate the gallery/flash page with photos
+add biography to home landing page
+figure out how to make it bigger when on a mobile device
