@@ -1,5 +1,7 @@
-Add nav bar to bottom of the gallery and flash page
-figure out how to automatically populate the gallery/flash page with photos
-add biography to home landing page
-figure out how to make it bigger when on a mobile device
-maybe make the nav bar centered again? idrk it looks fine enough
+-Add nav bar to bottom of the gallery and flash page
+-figure out how to automatically populate the gallery/flash page with photos
+-add biography to home landing page
+-figure out how to make it bigger when on a mobile device
+-maybe make the nav bar centered again? idrk it looks fine enough
+-decide whether or not to use google drive/dropbox to let nikita add photos to which will
+auto populate gallery/flash pages
