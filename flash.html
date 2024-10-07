@@ -1,55 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="154tattoo.com">
-    <link rel="stylesheet" href="styles.css">
-    <title>154tattoo</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flash - 154tattoo</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <div class="banner">
-    <a href="index.html"> <img src="assets/bannerfinal.png" alt="154tattoo logo" class="logo"></a>
+    <a href="index.html"><img src="assets/bannerfinal.png" alt="154tattoo logo" class="logo"></a>
     <nav>
-      <ul>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="flash.html" class="active">Flash</a></li>
-        <li><a href="https://docs.google.com/forms/d/e/..." target="_blank">Book</a></li>
-        <li><a href="shop.html">Shop</a></li>
-        <li><a href="https://www.instagram.com/154.tattoo/?hl=en" target="_blank">Instagram</a></li>
-      </ul>
+      <a href="gallery.html">Gallery</a>
+      <a href="flash.html" class="active">Flash</a>
+      <a href="https://docs.google.com/forms/d/e/..." target="_blank">Book</a>
+      <a href="shop.html">Shop</a>
+      <a href="https://www.instagram.com/154.tattoo/?hl=en" target="_blank">Instagram</a>
     </nav>
   </div>
-      <br>
 
+  <div class="image-grid" id="flashGrid"></div>
 
-      <div class="image-grid">
-        <div class="grid-item">
-            <img src="assets/IMG_2864.jpg" alt="Image 1">
-           
+  <script>
+    const flashFolder = 'assets/flash/';
+    const flashGrid = document.getElementById('flashGrid');
 
-        </div>
-        <div class="grid-item">
-          <img src="assets/IMG_2865.jpg" alt="Image 2">
-        </div> 
-      
-        <div class="grid-item">
-          <img src="assets/IMG_2866.jpg" alt="Image 3">
-        </div> 
-        <div class="grid-item">
-            <img src="assets/IMG_2864.jpg" alt="Image 1">
-        </div>
-        <div class="grid-item">
-          <img src="assets/IMG_2865.jpg" alt="Image 2">
-        </div> 
-      
-        <div class="grid-item">
-          <img src="assets/IMG_2866.jpg" alt="Image 3">
-        </div> 
-        </div>
-      
-      </body>
+    // Function to load images
+    function loadImages(folder, grid) {
+      fetch(folder)
+        .then(response => response.text())
+        .then(data => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(data, 'text/html');
+          const images = htmlDoc.getElementsByTagName('a');
 
+          for (let image of images) {
+            if (image.href.match(/\.(jpe?g|png|gif)$/i)) {
+              const gridItem = document.createElement('div');
+              gridItem.className = 'grid-item';
+              const img = document.createElement('img');
+              img.src = folder + image.href.split('/').pop();
+              img.alt = image.href.split('/').pop();
+              gridItem.appendChild(img);
+              grid.appendChild(gridItem);
+            }
+          }
+        })
+        .catch(error => console.error('Error loading images:', error));
+    }
+
+    // Load flash images
+    loadImages(flashFolder, flashGrid);
+  </script>
 </body>
-
 
 </html>
